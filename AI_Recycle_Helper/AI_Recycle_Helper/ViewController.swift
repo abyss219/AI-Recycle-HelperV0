@@ -22,8 +22,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
+      
+      \
         super.viewDidLoad()
-
         imagePicker.delegate = self
 
     }
@@ -37,19 +38,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         let request = VNCoreMLRequest(model: model) { request, error in
             guard let results = request.results as? [VNClassificationObservation],
-                let topResult = results.first
+                  let topResult = results.first
+                //let thirdResult=results.third
                 else {
                     fatalError("unexpected result type from VNCoreMLRequest")
             }
 
             print(topResult) //results
             print(topResult.identifier)
+            
             print("=================================================")
+            print(type(of:results))
+            print(type(of:topResult))
+            
+            
+            print("***********8")
             
             /*
-            var glass=["",]
-            var paper=["",]
-            var no_recycle=[""]
+            var glassBin=['beer bottle','beer glass','coffee mug']
+            var containerBin=['pop bottle, soda bottle','bottlecap']
+            var paperBin=["newspaper",]
+            var depot=['toilet tissue, toilet paper, bathroom tissue','bath towel','cellular telephone, cellular phone, cellphone, cell, mobile phone']
             
             */
             
@@ -96,20 +105,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         if let image = info[.originalImage] as? UIImage {
 
-            photoImageView.image = image
-            imagePicker.dismiss(animated: true, completion: nil)
+            self.photoImageView.image = image
+            self.imagePicker.dismiss(animated: true, completion: nil)
             guard let ciImage = CIImage(image: image) else {
                 fatalError("couldn't convert uiimage to CIImage")
             }
-            detect(image: ciImage)
+            self.detect(image: ciImage)
         }
     }
 
     
     
     @IBAction func cameraIsTapped(_ sender: UIBarButtonItem) {
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
+        self.imagePicker.sourceType = .camera
+        self.imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
         
     }
