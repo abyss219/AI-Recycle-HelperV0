@@ -14,7 +14,8 @@ import Social
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
-
+    @IBOutlet weak var Result1: UILabel!
+    
     
     @IBOutlet weak var photoImageView: UIImageView!
 
@@ -22,9 +23,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
-      
-      \
         super.viewDidLoad()
+        Result1.text=""
         imagePicker.delegate = self
 
     }
@@ -39,17 +39,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let request = VNCoreMLRequest(model: model) { request, error in
             guard let results = request.results as? [VNClassificationObservation],
                   let topResult = results.first
-                //let thirdResult=results.third
+                 
                 else {
                     fatalError("unexpected result type from VNCoreMLRequest")
             }
-
-            print(topResult) //results
-            print(topResult.identifier)
+            self.Result1.text=results[0].identifier
+            
+            print("first: \(results[0].identifier)")
+            print("sec: \(results[1].identifier)")
+            print("third \(results[2].identifier)")
+             
+            
+         //   print(topResult) //results
+           // print(topResult.identifier)
             
             print("=================================================")
-            print(type(of:results))
-            print(type(of:topResult))
+            //print(type(of:results[1]))
+           // print(type(of:topResult))
             
             
             print("***********8")
@@ -68,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if topResult.identifier.contains("plastic bag") || topResult.identifier.contains("tissue") {
                 DispatchQueue.main.async {
-                    self.navigationItem.title = "Depot"
+                    self.navigationItem.title = results[0].identifier+results[1].identifier
                     self.navigationController?.navigationBar.barTintColor = UIColor.green
                     self.navigationController?.navigationBar.isTranslucent = false
                 }
