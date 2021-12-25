@@ -60,18 +60,61 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             print("***********8")
             
+            
+            var glassBin=["beer bottle","beer glass","coffee mug","red wine","wine bottle","perfume, essence","plate","cup"]
+            var containerBin=["pop bottle, soda bottle"]
+            var paperBin=["comic book"]
+            var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer"]
+            var food=["pizza, pizza pie","meat loaf, meatloaf","hotdog, hot dog, red hot","mashed potato","broccoli","bell pepper","mushroom","banana","pineapple, ananas","strawberry","orange","lemon","jackfruit, jak, jack","custard apple","pomegranate","fig"]
+            var furniture=["desk"]
+            
+            
+            
+            if glassBin.contains(results[0].identifier){
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Glass"
+                    //self.navigationItem.titleTextAttributes=
+                    self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
+                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                    self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            else if containerBin.contains(results[0].identifier){
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Container"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.blue
+                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                    self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            else if paperBin.contains(results[0].identifier){
+                
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Paper"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                    self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            else if food.contains(results[0].identifier){
+                DispatchQueue.main.async {
+                self.navigationItem.title = "Food"
+                self.navigationController?.navigationBar.barTintColor = UIColor.green
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Depot"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.black
+                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                    self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            
+            
             /*
-            var glassBin=['beer bottle','beer glass','coffee mug']
-            var containerBin=['pop bottle, soda bottle','bottlecap']
-            var paperBin=["newspaper",]
-            var depot=['toilet tissue, toilet paper, bathroom tissue','bath towel','cellular telephone, cellular phone, cellphone, cell, mobile phone']
-            
-            */
-            
-            
-            
-            
-            
             if topResult.identifier.contains("plastic bag") || topResult.identifier.contains("tissue") {
                 DispatchQueue.main.async {
                     self.navigationItem.title = results[0].identifier+results[1].identifier
@@ -94,7 +137,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     self.navigationController?.navigationBar.isTranslucent = false
                 }
             }
-            
+            */
         }
 
         let handler = VNImageRequestHandler(ciImage: image)
