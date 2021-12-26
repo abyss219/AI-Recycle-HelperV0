@@ -14,8 +14,22 @@ import Social
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
-    @IBOutlet weak var Result1: UILabel!
+    @IBOutlet weak var myResult: UILabel!
     
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var r1="xx1"
+    var r2 = "xx2"
+    var r3 = "xx3"
+    
+    
+    
+    var glassBin=["beer bottle","beer glass","coffee mug","red wine","wine bottle","perfume, essence","plate","cup","beaker"]
+    var containerBin=["pop bottle, soda bottle"]
+    var paperBin=["comic book"]
+    var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer","balloon"]
+    var food=["pizza, pizza pie","meat loaf, meatloaf","hotdog, hot dog, red hot","mashed potato","broccoli","bell pepper","mushroom","banana","pineapple, ananas","strawberry","orange","lemon","jackfruit, jak, jack","custard apple","pomegranate","fig"]
+    var furniture=["desk"]
     
     @IBOutlet weak var photoImageView: UIImageView!
 
@@ -24,8 +38,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Result1.text=""
+        myResult.text=""
         imagePicker.delegate = self
+        self.nextButton.alpha=0
 
     }
     
@@ -43,101 +58,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 else {
                     fatalError("unexpected result type from VNCoreMLRequest")
             }
-            self.Result1.text=results[0].identifier
+            self.nextButton.isEnabled=true
+            self.nextButton.alpha=1
+           
             
-            print("first: \(results[0].identifier)")
-            print("sec: \(results[1].identifier)")
-            print("third \(results[2].identifier)")
-             
+            //print("first: \(results[0].identifier)")
+            //print("sec: \(results[1].identifier)")
+            //print("third \(results[2].identifier)")
+            self.r1 = results[0].identifier
+            self.r2 = results[1].identifier;
+            self.r3 = results[2].identifier;
             
-         //   print(topResult) //results
+            self.defineCatagories(nthResult:self.r1);
+           // print(topResult) //results
            // print(topResult.identifier)
-            
-            print("=================================================")
             //print(type(of:results[1]))
            // print(type(of:topResult))
-            
-            
-            print("***********8")
-            
-            
-            var glassBin=["beer bottle","beer glass","coffee mug","red wine","wine bottle","perfume, essence","plate","cup"]
-            var containerBin=["pop bottle, soda bottle"]
-            var paperBin=["comic book"]
-            var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer"]
-            var food=["pizza, pizza pie","meat loaf, meatloaf","hotdog, hot dog, red hot","mashed potato","broccoli","bell pepper","mushroom","banana","pineapple, ananas","strawberry","orange","lemon","jackfruit, jak, jack","custard apple","pomegranate","fig"]
-            var furniture=["desk"]
-            
-            
-            
-            if glassBin.contains(results[0].identifier){
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Glass"
-                    //self.navigationItem.titleTextAttributes=
-                    self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
-                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else if containerBin.contains(results[0].identifier){
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Container"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.blue
-                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else if paperBin.contains(results[0].identifier){
-                
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Paper"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.yellow
-                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else if food.contains(results[0].identifier){
-                DispatchQueue.main.async {
-                self.navigationItem.title = "Food"
-                self.navigationController?.navigationBar.barTintColor = UIColor.green
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
-                self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else{
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Depot"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.black
-                    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            
-            
-            /*
-            if topResult.identifier.contains("plastic bag") || topResult.identifier.contains("tissue") {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = results[0].identifier+results[1].identifier
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else if (topResult.identifier.contains("paper") ){
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "paper!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.yellow
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            else{
-                
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "i dont know!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.yellow
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
-            */
+    
         }
 
         let handler = VNImageRequestHandler(ciImage: image)
@@ -164,6 +101,69 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     
+    // parameters: nthResult garbagesCatas
+    func defineCatagories(nthResult:String){
+        self.myResult.text=nthResult
+        if self.glassBin.contains(nthResult){
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Glass"
+                //self.navigationItem.titleTextAttributes=
+                self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }
+        else if self.containerBin.contains(nthResult){
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Container"
+                self.navigationController?.navigationBar.barTintColor = UIColor.blue
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }
+        else if self.paperBin.contains(nthResult){
+            
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Paper"
+                self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }
+        else if self.food.contains(nthResult){
+            DispatchQueue.main.async {
+            self.navigationItem.title = "Food"
+            self.navigationController?.navigationBar.barTintColor = UIColor.green
+            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+            self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }
+        else{
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Depot"
+                self.navigationController?.navigationBar.barTintColor = UIColor.black
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+    
+        print("1: \(self.r1).")
+        print("2: \(self.r2).")
+        print("3: \(self.r3).")
+        self.defineCatagories(nthResult:self.r2);
+        
+        
+    }
     
     @IBAction func cameraIsTapped(_ sender: UIBarButtonItem) {
         self.imagePicker.sourceType = .camera

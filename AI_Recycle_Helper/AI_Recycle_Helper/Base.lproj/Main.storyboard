@@ -29,6 +29,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-BZ-cG5">
+                                <rect key="frame" x="145" y="542" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vd5-Rv-iDb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,7 +51,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Result1" destination="grf-LC-8Sk" id="NfU-4y-WHp"/>
+                        <outlet property="myResult" destination="grf-LC-8Sk" id="NfU-4y-WHp"/>
+                        <outlet property="nextButton" destination="ftg-BZ-cG5" id="Zlf-jJ-47g"/>
                         <outlet property="photoImageView" destination="zRX-1X-4wG" id="4mA-qq-8HM"/>
                     </connections>
                 </viewController>
@@ -78,6 +89,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
