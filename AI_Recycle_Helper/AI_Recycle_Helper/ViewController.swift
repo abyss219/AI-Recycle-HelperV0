@@ -18,15 +18,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var nextButton: UIButton!
     
-    var r1="xx1"
-    var r2 = "xx2"
-    var r3 = "xx3"
+    var r = ["","","","",""]
+
     
     
     
     var glassBin=["beer bottle","beer glass","coffee mug","red wine","wine bottle","perfume, essence","plate","cup","beaker"]
     var containerBin=["pop bottle, soda bottle"]
-    var paperBin=["comic book"]
+    var paperBin=["comic book","space bar"]
     var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer","balloon"]
     var food=["pizza, pizza pie","meat loaf, meatloaf","hotdog, hot dog, red hot","mashed potato","broccoli","bell pepper","mushroom","banana","pineapple, ananas","strawberry","orange","lemon","jackfruit, jak, jack","custard apple","pomegranate","fig"]
     var furniture=["desk"]
@@ -65,11 +64,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             //print("first: \(results[0].identifier)")
             //print("sec: \(results[1].identifier)")
             //print("third \(results[2].identifier)")
-            self.r1 = results[0].identifier
-            self.r2 = results[1].identifier;
-            self.r3 = results[2].identifier;
+            for i in 0...4{
+                self.r[i] = results[i].identifier
+            }
+          
             
-            self.defineCatagories(nthResult:self.r1);
+            self.defineCatagories(nthResult:self.r[0]);
            // print(topResult) //results
            // print(topResult.identifier)
             //print(type(of:results[1]))
@@ -106,43 +106,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.myResult.text=nthResult
         if self.glassBin.contains(nthResult){
             DispatchQueue.main.async {
-                self.navigationItem.title = "Glass"
+                self.navigationItem.title = "Result \(self.count%5+1): Glass"
                 //self.navigationItem.titleTextAttributes=
                 self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor(red:176, green:176, blue:176, alpha: 1)]
                 self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.containerBin.contains(nthResult){
             DispatchQueue.main.async {
-                self.navigationItem.title = "Container"
-                self.navigationController?.navigationBar.barTintColor = UIColor.blue
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationItem.title = "Result \(self.count%5+1): Container"
+                //self.navigationController?.navigationBar.barTintColor = UIColor.blue
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.blue]
                 self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.paperBin.contains(nthResult){
             
             DispatchQueue.main.async {
-                self.navigationItem.title = "Paper"
-                self.navigationController?.navigationBar.barTintColor = UIColor.yellow
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationItem.title = "Result \(self.count%5+1): Paper"
+                //self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.orange]
                 self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.food.contains(nthResult){
             DispatchQueue.main.async {
-            self.navigationItem.title = "Food"
-            self.navigationController?.navigationBar.barTintColor = UIColor.green
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+            self.navigationItem.title = "Result \(self.count%5+1): Food"
+            //self.navigationController?.navigationBar.barTintColor = UIColor.green
+            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
+            self.navigationController?.navigationBar.isTranslucent = false
+            }
+        }else if self.furniture.contains(nthResult){
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Result \(self.count%5+1): Furniture"
+            //self.navigationController?.navigationBar.barTintColor = UIColor.green
+            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.purple]
             self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else{
             DispatchQueue.main.async {
-                self.navigationItem.title = "Depot"
-                self.navigationController?.navigationBar.barTintColor = UIColor.black
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.red]
+                self.navigationItem.title = "Result \(self.count%5+1): Trash"
+                //self.navigationController?.navigationBar.backgroundColor = UIColor.black
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
                 self.navigationController?.navigationBar.isTranslucent = false
             }
         }
@@ -153,14 +160,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    
+    var count=0
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         
-    
+    /*
         print("1: \(self.r1).")
         print("2: \(self.r2).")
         print("3: \(self.r3).")
-        self.defineCatagories(nthResult:self.r2);
+     */
+        count+=1
+        self.defineCatagories(nthResult:self.r[count%5])
+        
         
         
     }
