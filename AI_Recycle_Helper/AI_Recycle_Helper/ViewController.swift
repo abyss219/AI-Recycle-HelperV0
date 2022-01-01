@@ -40,6 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         myResult.text=""
         imagePicker.delegate = self
         self.nextButton.alpha=0
+        self.view.backgroundColor=UIColor.white
 
     }
     
@@ -110,7 +111,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 //self.navigationItem.titleTextAttributes=
                 self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
                 self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor(red:176, green:176, blue:176, alpha: 1)]
-                self.navigationController?.navigationBar.isTranslucent = false
+                //self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.containerBin.contains(nthResult){
@@ -118,7 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.navigationItem.title = "Result \(self.count%5+1): Container"
                 //self.navigationController?.navigationBar.barTintColor = UIColor.blue
                 self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.blue]
-                self.navigationController?.navigationBar.isTranslucent = false
+                //self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.paperBin.contains(nthResult){
@@ -127,7 +128,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.navigationItem.title = "Result \(self.count%5+1): Paper"
                 //self.navigationController?.navigationBar.barTintColor = UIColor.yellow
                 self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.orange]
-                self.navigationController?.navigationBar.isTranslucent = false
+                //self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else if self.food.contains(nthResult){
@@ -135,14 +136,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.navigationItem.title = "Result \(self.count%5+1): Food"
             //self.navigationController?.navigationBar.barTintColor = UIColor.green
             self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
-            self.navigationController?.navigationBar.isTranslucent = false
+            //self.navigationController?.navigationBar.isTranslucent = false
             }
         }else if self.furniture.contains(nthResult){
             DispatchQueue.main.async {
                 self.navigationItem.title = "Result \(self.count%5+1): Furniture"
             //self.navigationController?.navigationBar.barTintColor = UIColor.green
             self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.purple]
-            self.navigationController?.navigationBar.isTranslucent = false
+            //self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         else{
@@ -150,7 +151,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.navigationItem.title = "Result \(self.count%5+1): Trash"
                 //self.navigationController?.navigationBar.backgroundColor = UIColor.black
                 self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
-                self.navigationController?.navigationBar.isTranslucent = false
+               // self.navigationController?.navigationBar.isTranslucent = false
             }
         }
         
@@ -179,7 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.imagePicker.sourceType = .camera
         self.imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
-        
+        self.view.backgroundColor=UIColor.white
     }
 }
 
