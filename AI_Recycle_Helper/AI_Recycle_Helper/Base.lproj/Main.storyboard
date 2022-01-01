@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="IIJ-BD-Wec">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="IIJ-BD-Wec">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRX-1X-4wG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRX-1X-4wG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-7B-ycA" userLabel="BottomView">
-                                        <rect key="frame" x="144.5" y="377" width="125" height="397"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-7B-ycA" userLabel="BottomView">
+                                        <rect key="frame" x="0.0" y="524" width="414" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleeping Bag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grf-LC-8Sk">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="20.5"/>
+                                                <rect key="frame" x="144.5" y="0.0" width="125" height="124.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="bVN-UQ-g8t"/>
                                                 </constraints>
@@ -34,12 +34,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OxP-pt-yYq">
-                                                <rect key="frame" x="0.0" y="76.5" width="107" height="320.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxP-pt-yYq">
+                                                <rect key="frame" x="0.0" y="125.5" width="414" height="124.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-BZ-cG5">
-                                                        <rect key="frame" x="20" y="20" width="67" height="320.5"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-BZ-cG5">
+                                                        <rect key="frame" x="173.5" y="47" width="67" height="31"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -49,10 +48,24 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ftg-BZ-cG5" firstAttribute="centerX" secondItem="OxP-pt-yYq" secondAttribute="centerX" id="dfx-SO-II8"/>
+                                                    <constraint firstItem="ftg-BZ-cG5" firstAttribute="centerY" secondItem="OxP-pt-yYq" secondAttribute="centerY" id="p1H-aN-xnb"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <constraints>
+                                            <constraint firstItem="OxP-pt-yYq" firstAttribute="leading" secondItem="MA8-7B-ycA" secondAttribute="leading" id="02u-8e-RW3"/>
+                                            <constraint firstAttribute="trailing" secondItem="OxP-pt-yYq" secondAttribute="trailing" id="h8i-3N-uNX"/>
+                                            <constraint firstAttribute="height" constant="250" id="kMB-vA-gUh"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="MA8-7B-ycA" firstAttribute="leading" secondItem="IIJ-BD-Wec" secondAttribute="leading" id="D6i-Su-3JC"/>
+                                    <constraint firstAttribute="trailing" secondItem="MA8-7B-ycA" secondAttribute="trailing" id="yR9-jY-dgt"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -110,6 +123,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
