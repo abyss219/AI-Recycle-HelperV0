@@ -24,9 +24,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     var glassBin=["beer bottle","beer glass","coffee mug","red wine","wine bottle","perfume, essence","plate","cup","beaker"]
-    var containerBin=["pop bottle, soda bottle"]
-    var paperBin=["comic book","space bar"]
-    var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer","balloon"]
+    var containerBin=["pop bottle, soda bottle","pill bottle"]
+    var paperBin=["comic book"]
+    var depot=["toilet tissue, toilet paper, bathroom tissue","bath towel","cellular telephone, cellular phone, cellphone, cell, mobile phone","paper towel","nail","worm fence, snake fence, snake-rail fence, Virginia fence","notebook, notebook computer","balloon","space bar","menu","book jacket, dust cover, dust jacket, dust wrapper","teapot"]
     var food=["pizza, pizza pie","meat loaf, meatloaf","hotdog, hot dog, red hot","mashed potato","broccoli","bell pepper","mushroom","banana","pineapple, ananas","strawberry","orange","lemon","jackfruit, jak, jack","custard apple","pomegranate","fig"]
     var furniture=["desk"]
     
@@ -109,8 +109,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             DispatchQueue.main.async {
                 self.navigationItem.title = "Result \(self.count%5+1): Glass"
                 //self.navigationItem.titleTextAttributes=
-                self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
-                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor(red:176, green:176, blue:176, alpha: 1)]
+                //self.navigationController?.navigationBar.barTintColor = UIColor(red:176, green:176, blue:176, alpha: 1)
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor(red:176.0/255.0, green:176.0/255.0, blue:176.0/255.0, alpha: 1.0)]
                 //self.navigationController?.navigationBar.isTranslucent = false
             }
         }
@@ -180,7 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.imagePicker.sourceType = .camera
         self.imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
-        self.view.backgroundColor=UIColor.white
+       // self.view.backgroundColor=UIColor.white
     }
 }
 
