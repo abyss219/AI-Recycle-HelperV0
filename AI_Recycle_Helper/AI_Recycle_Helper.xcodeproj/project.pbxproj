@@ -19,6 +19,8 @@
 		940F1B8527656979002802D7 /* Inceptionv3.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 940F1B8427656979002802D7 /* Inceptionv3.mlkitmodel */; };
 		947396FD278BB1880059F015 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947396FC278BB1880059F015 /* QuizViewController.swift */; };
 		947396FF278BB2530059F015 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947396FE278BB2530059F015 /* HomeViewController.swift */; };
+		94739703278BB8F70059F015 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94739702278BB8F70059F015 /* Question.swift */; };
+		94739705278BBCE30059F015 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94739704278BBCE30059F015 /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		940F1B8427656979002802D7 /* Inceptionv3.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlkitmodel; sourceTree = "<group>"; };
 		947396FC278BB1880059F015 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		947396FE278BB2530059F015 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		94739702278BB8F70059F015 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		94739704278BBCE30059F015 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				940F1B6227656960002802D7 /* Info.plist */,
 				947396FC278BB1880059F015 /* QuizViewController.swift */,
 				947396FE278BB2530059F015 /* HomeViewController.swift */,
+				94739702278BB8F70059F015 /* Question.swift */,
+				94739704278BBCE30059F015 /* Quiz.swift */,
 			);
 			path = AI_Recycle_Helper;
 			sourceTree = "<group>";
@@ -268,10 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				940F1B8527656979002802D7 /* Inceptionv3.mlkitmodel in Sources */,
+				94739705278BBCE30059F015 /* Quiz.swift in Sources */,
 				947396FD278BB1880059F015 /* QuizViewController.swift in Sources */,
 				940F1B592765695F002802D7 /* AiDetectViewController.swift in Sources */,
 				940F1B552765695F002802D7 /* AppDelegate.swift in Sources */,
 				940F1B572765695F002802D7 /* SceneDelegate.swift in Sources */,
+				94739703278BB8F70059F015 /* Question.swift in Sources */,
 				947396FF278BB2530059F015 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
