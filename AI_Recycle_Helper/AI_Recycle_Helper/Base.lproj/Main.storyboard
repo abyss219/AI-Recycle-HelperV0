@@ -126,39 +126,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-H3-Dj4">
-                                <rect key="frame" x="186" y="230" width="8" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9SH-2M-DWy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-H3-Dj4">
+                                        <rect key="frame" x="203" y="0.0" width="8" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="GSW-MG-WSC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-VH-xUF">
+                                        <rect key="frame" x="87" y="50.5" width="240" height="127"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf1-Om-v19" userLabel="Explannation">
+                                        <rect key="frame" x="186.5" y="207.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FpZ-Ci-gZK" userLabel="ButtonsStackView">
+                                        <rect key="frame" x="0.0" y="258" width="414" height="397"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-DO-pg5" userLabel="Button 1">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="254.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="n/a">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" systemColor="labelColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-qw-E4b" userLabel="Button 2">
+                                                <rect key="frame" x="0.0" y="264.5" width="414" height="37.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="False">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" systemColor="labelColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dup-9W-YKu" userLabel="Button 3">
+                                                <rect key="frame" x="0.0" y="312" width="414" height="37.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaX-O1-7ao" userLabel="Button 4">
+                                                <rect key="frame" x="0.0" y="359.5" width="414" height="37.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Fm9-DO-pg5" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="1QV-eH-Xut"/>
+                                            <constraint firstItem="QaX-O1-7ao" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="22f-wo-ysn"/>
+                                            <constraint firstItem="b0F-qw-E4b" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="aZf-iI-ZVh"/>
+                                            <constraint firstAttribute="trailing" secondItem="QaX-O1-7ao" secondAttribute="trailing" id="bqy-wR-eR8"/>
+                                            <constraint firstItem="dup-9W-YKu" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="eEO-eM-nqy"/>
+                                            <constraint firstAttribute="trailing" secondItem="b0F-qw-E4b" secondAttribute="trailing" id="gLp-kd-g0b"/>
+                                            <constraint firstAttribute="trailing" secondItem="dup-9W-YKu" secondAttribute="trailing" id="pt1-dL-qCK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fm9-DO-pg5" secondAttribute="trailing" id="rj4-hI-Urm"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="NcU-AD-ucl" userLabel="PreNextStackView">
+                                        <rect key="frame" x="0.0" y="685" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISY-YW-37Y" userLabel="Next Question">
+                                                <rect key="frame" x="347" y="0.0" width="67" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="answerButtonIsPressed:" destination="ObK-nt-4FB" eventType="touchUpInside" id="wdg-M6-YrY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="oen-dv-K9T"/>
+                                        </constraints>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tv3-Re-aXi">
+                                        <rect key="frame" x="24.5" y="765" width="365" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="wxZ-7r-2i7"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="GSW-MG-WSC"/>
+                                    <constraint firstItem="FpZ-Ci-gZK" firstAttribute="leading" secondItem="9SH-2M-DWy" secondAttribute="leading" id="3wW-Bh-8Bz"/>
+                                    <constraint firstAttribute="trailing" secondItem="NcU-AD-ucl" secondAttribute="trailing" id="C08-3n-304"/>
+                                    <constraint firstItem="tv3-Re-aXi" firstAttribute="centerX" secondItem="9SH-2M-DWy" secondAttribute="centerX" id="i25-S4-cMj"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Qs-VH-xUF" secondAttribute="trailing" constant="87" id="utf-8R-M6i"/>
+                                    <constraint firstItem="NcU-AD-ucl" firstAttribute="leading" secondItem="9SH-2M-DWy" secondAttribute="leading" id="w1t-sd-sFF"/>
+                                    <constraint firstAttribute="trailing" secondItem="FpZ-Ci-gZK" secondAttribute="trailing" id="ySq-it-igw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-DO-pg5">
-                                <rect key="frame" x="193" y="365" width="53" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="True"/>
-                                <connections>
-                                    <action selector="answerButtonIsPressed:" destination="ObK-nt-4FB" eventType="touchUpInside" id="wm2-Kg-hid"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-qw-E4b">
-                                <rect key="frame" x="192" y="422" width="58" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="False"/>
-                                <connections>
-                                    <action selector="answerButtonIsPressed:" destination="ObK-nt-4FB" eventType="touchUpInside" id="5pc-oj-jpR"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ti3-le-new"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ti3-le-new" firstAttribute="trailing" secondItem="9SH-2M-DWy" secondAttribute="trailing" id="RdS-vP-LsT"/>
+                            <constraint firstItem="9SH-2M-DWy" firstAttribute="leading" secondItem="ti3-le-new" secondAttribute="leading" id="vOL-VZ-aZL"/>
+                            <constraint firstItem="ti3-le-new" firstAttribute="bottom" secondItem="9SH-2M-DWy" secondAttribute="bottom" id="xJh-Zr-lRy"/>
+                            <constraint firstItem="9SH-2M-DWy" firstAttribute="top" secondItem="ti3-le-new" secondAttribute="top" id="xv8-TS-6Qc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quiz" image="pencil" catalog="system" selectedImage="pencil" id="3Uk-2U-cWh"/>
                     <connections>
+                        <outlet property="b1" destination="Fm9-DO-pg5" id="MWM-sW-QBF"/>
+                        <outlet property="b2" destination="b0F-qw-E4b" id="6cu-dq-jr2"/>
+                        <outlet property="b3" destination="dup-9W-YKu" id="rVu-G2-5EQ"/>
+                        <outlet property="b4" destination="QaX-O1-7ao" id="Cbw-YB-Lrn"/>
+                        <outlet property="questionExp" destination="cf1-Om-v19" id="XHS-gL-r6k"/>
+                        <outlet property="questionImage" destination="3Qs-VH-xUF" id="aHY-oO-1L9"/>
                         <outlet property="questionText" destination="MdN-H3-Dj4" id="OCz-VK-Hok"/>
                     </connections>
                 </viewController>
@@ -172,6 +269,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cxO-xv-JYE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ICW-FM-9mA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
@@ -214,6 +312,9 @@
         <image name="camera.shutter.button" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
