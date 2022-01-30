@@ -40,6 +40,8 @@ class QuizViewController: UIViewController {
     
     var count=0
    
+    var userSelectList:[String] = []
+    
     //var questions=["1+2=5","2+6=7","3+1=4"]
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -79,6 +81,19 @@ class QuizViewController: UIViewController {
     }
     
     
+    
+    @IBAction func userSelect(_ sender: UIButton) {
+        if userSelectList.contains(sender.currentTitle!){
+            
+            userSelectList=userSelectList.filter(){$0 != sender.currentTitle!}
+            sender.backgroundColor=UIColor.clear
+        }else{
+            userSelectList.append(sender.currentTitle!)
+            sender.backgroundColor=UIColor.green
+        }
+        print(userSelectList)
+        
+    }
     /*
     // MARK: - Navigation
 
