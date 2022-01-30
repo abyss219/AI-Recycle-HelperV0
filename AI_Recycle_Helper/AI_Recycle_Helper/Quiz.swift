@@ -18,8 +18,8 @@ struct Quiz{
         Question(questionText: "Recyclables should be loose and not bagged.", options: ["True","False"], answers: [0], hasImage: false),
         Question(questionText: "Old garden hoses and electric cords belong in your recycling bin/cart.", options: ["Yes","No"], answers: [0], hasImage: false),
         Question(questionText: "All metal is recyclable - just put it in your recycling bin/cart at home. ", options: ["True", "False"], answers: [1], hasImage: false),
-        Question(questionText: "Which of the following plastic bottles are recyclable?", options: ["Only shampoo bottle",    "Only laundry detergent",    "Only dish soap",    "Only window cleaner", "All of above"], answers: [4], hasImage: false),
-        Question(questionText: "You should not…", options: ["Place recycling in plastic bags and then putting them in the recycling bin.","Put recyclable items in the general rubbish bin.","123456","Separate food scraps from pizza boxes before recycling."], answers: [0,1,2], hasImage: false)
+        //Question(questionText: "Which of the following plastic bottles are recyclable?", options: ["Only shampoo bottle",    "Only laundry detergent",    "Only dish soap",    "Only window cleaner", "All of above"], answers: [4], hasImage: false),
+        Question(questionText: "You should not…", options: ["Place recycling in plastic bags and then putting them in the recycling bin.","Put recyclable items in the general rubbish bin.","Separate food scraps from pizza boxes before recycling."], answers: [0,1,2], hasImage: false)
     ]
 
     
