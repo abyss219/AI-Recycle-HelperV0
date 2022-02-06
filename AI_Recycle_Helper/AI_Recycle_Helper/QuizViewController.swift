@@ -23,6 +23,8 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var b4: UIButton!
     
+    @IBOutlet weak var b5: UIButton!
+    
   /*
     
     init(){
@@ -61,22 +63,24 @@ class QuizViewController: UIViewController {
     }
     
     func updateUI(){
+        userSelectList = [];
         quiz.getQuestion();
         questionText.text = quiz.getQuestionText();
         let questionsOption = quiz.questions[quiz.currentQustionNum].options;
-        let buttonList=[self.b1,self.b2,self.b3,self.b4];
-        for i in 0...3{
+        let buttonList=[self.b1,self.b2,self.b3,self.b4,self.b5];
+        for i in 0...4{
             buttonList[i]?.setTitle(" ", for: .normal);
             buttonList[i]?.isEnabled=false;
             buttonList[i]?.alpha=0;
+            buttonList[i]?.backgroundColor=UIColor.clear;
         }
         
         
         
         for index in 0...(questionsOption.count-1){
-             buttonList[4-questionsOption.count+index]?.setTitle(questionsOption[index], for: .normal);
-            buttonList[4-questionsOption.count+index]?.isEnabled=true;
-            buttonList[4-questionsOption.count+index]?.alpha=1
+             buttonList[5-questionsOption.count+index]?.setTitle(questionsOption[index], for: .normal);
+            buttonList[5-questionsOption.count+index]?.isEnabled=true;
+            buttonList[5-questionsOption.count+index]?.alpha=1
         }
     }
     
