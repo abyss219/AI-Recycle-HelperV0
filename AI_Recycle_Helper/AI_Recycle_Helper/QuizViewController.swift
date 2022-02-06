@@ -11,7 +11,7 @@ class QuizViewController: UIViewController {
 
     @IBOutlet weak var questionText: UILabel!
     
-    @IBOutlet weak var questionImage: UIImageView!
+    @IBOutlet weak var questionImage: UIImageView?
     
     @IBOutlet weak var questionExp: UILabel!
     
@@ -48,7 +48,8 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         updateUI()
-        
+        questionImage!.image=#imageLiteral(resourceName: "Q1")
+            
         // Do any additional setup after loading the view.
     }
     
