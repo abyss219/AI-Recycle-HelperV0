@@ -89,15 +89,18 @@ class QuizViewController: UIViewController {
     }
     
     
-    
+    //Anamation
     @IBAction func userSelect(_ sender: UIButton) {
+        
         if userSelectList.contains(sender.currentTitle!){
-            
             userSelectList=userSelectList.filter(){$0 != sender.currentTitle!}
             sender.backgroundColor=UIColor.clear
         }else{
-            userSelectList.append(sender.currentTitle!)
-            sender.backgroundColor=UIColor.green
+            if(userSelectList.count < quiz.questions[quiz.currentQustionNum].answers.count){
+                userSelectList.append(sender.currentTitle!)
+                sender.backgroundColor=UIColor.green
+            }
+
         }
         print(userSelectList)
         

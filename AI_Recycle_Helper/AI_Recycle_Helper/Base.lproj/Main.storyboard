@@ -157,6 +157,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-DO-pg5" userLabel="Button 1">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="dAL-t5-ZHS"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="n/a">
                                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -170,6 +173,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-qw-E4b" userLabel="Button 2">
                                                 <rect key="frame" x="0.0" y="47.5" width="414" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="lCs-HF-nHb"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="False">
                                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -183,6 +189,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dup-9W-YKu" userLabel="Button 3">
                                                 <rect key="frame" x="0.0" y="95" width="414" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="KgD-q5-K7T"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -196,6 +205,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaX-O1-7ao" userLabel="Button 4">
                                                 <rect key="frame" x="0.0" y="142.5" width="414" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="Fdn-lW-zQf"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -209,6 +221,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTE-pp-aBc" userLabel="Button 5">
                                                 <rect key="frame" x="0.0" y="190" width="414" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="zcj-J4-Lnh"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -229,6 +244,7 @@
                                             <constraint firstAttribute="trailing" secondItem="QaX-O1-7ao" secondAttribute="trailing" id="bqy-wR-eR8"/>
                                             <constraint firstItem="dup-9W-YKu" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="eEO-eM-nqy"/>
                                             <constraint firstAttribute="trailing" secondItem="b0F-qw-E4b" secondAttribute="trailing" id="gLp-kd-g0b"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="m0s-RY-tcL"/>
                                             <constraint firstItem="wTE-pp-aBc" firstAttribute="leading" secondItem="FpZ-Ci-gZK" secondAttribute="leading" id="ncm-oh-gPb"/>
                                             <constraint firstAttribute="trailing" secondItem="dup-9W-YKu" secondAttribute="trailing" id="pt1-dL-qCK"/>
                                             <constraint firstAttribute="trailing" secondItem="Fm9-DO-pg5" secondAttribute="trailing" id="rj4-hI-Urm"/>
