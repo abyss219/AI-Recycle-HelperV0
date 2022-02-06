@@ -13,9 +13,9 @@ struct Quiz{
     var score = 0
     var usedQuestion:[Int]=[];
     let questions = [
-        Question(questionText:"Styrofoam should be placed in your recycling bin/cart." , options: ["True","False"], answers: [1], hasImage: false),
-        Question(questionText: "Batteries and small electronics go in your recycling bin/cart.", options: ["True","False"], answers: [1], hasImage: false),
-        Question(questionText: "Recyclables should be loose and not bagged.", options: ["True","False"], answers: [0], hasImage: false),
+        Question(questionText:"Styrofoam should be placed in your recycling bin/cart." , options: ["True","False"], answers: [1], hasImage: true),
+        Question(questionText: "Batteries and small electronics go in your recycling bin/cart.", options: ["True","False"], answers: [1], hasImage: true),
+        Question(questionText: "Recyclables should be loose and not bagged.", options: ["True","False"], answers: [0], hasImage: true),
         Question(questionText: "Old garden hoses and electric cords belong in your recycling bin/cart.", options: ["Yes","No"], answers: [0], hasImage: false),
         Question(questionText: "All metal is recyclable - just put it in your recycling bin/cart at home. ", options: ["True", "False"], answers: [1], hasImage: false),
         Question(questionText: "Which of the following plastic bottles are recyclable?", options: ["Only shampoo bottle",    "Only laundry detergent",    "Only dish soap",    "Only window cleaner", "All of above"], answers: [4], hasImage: false),
@@ -56,9 +56,9 @@ struct Quiz{
     
     
     mutating func getQuestion(){
-        var nextQuestionNum = Int.random(in: 1..<questions.count)
+        var nextQuestionNum = Int.random(in: 0..<questions.count)
         while (usedQuestion.contains(nextQuestionNum)){
-            nextQuestionNum = Int.random(in: 1..<questions.count)
+            nextQuestionNum = Int.random(in: 0..<questions.count)
         }
         self.currentQustionNum = nextQuestionNum
         self.usedQuestion.append(nextQuestionNum)

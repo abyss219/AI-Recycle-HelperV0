@@ -48,7 +48,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         updateUI()
-        questionImage!.image=#imageLiteral(resourceName: "Q1")
+        //questionImage!.image=#imageLiteral(resourceName: "Q1")
             
         // Do any additional setup after loading the view.
     }
@@ -69,15 +69,18 @@ class QuizViewController: UIViewController {
         questionText.text = quiz.getQuestionText();
         let questionsOption = quiz.questions[quiz.currentQustionNum].options;
         let buttonList=[self.b1,self.b2,self.b3,self.b4,self.b5];
+        if (quiz.questions[quiz.currentQustionNum].hasImage == true){
+            questionImage!.image=#imageLiteral(resourceName: "Q"+String(quiz.currentQustionNum))
+        }else{
+            questionImage?.image=nil;
+        }
+        
         for i in 0...4{
             buttonList[i]?.setTitle(" ", for: .normal);
             buttonList[i]?.isEnabled=false;
             buttonList[i]?.alpha=0;
             buttonList[i]?.backgroundColor=UIColor.clear;
         }
-        
-        
-        
         for index in 0...(questionsOption.count-1){
              buttonList[5-questionsOption.count+index]?.setTitle(questionsOption[index], for: .normal);
             buttonList[5-questionsOption.count+index]?.isEnabled=true;
