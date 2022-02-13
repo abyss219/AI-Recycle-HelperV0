@@ -21,6 +21,7 @@
 		947396FF278BB2530059F015 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947396FE278BB2530059F015 /* HomeViewController.swift */; };
 		94739703278BB8F70059F015 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94739702278BB8F70059F015 /* Question.swift */; };
 		94739705278BBCE30059F015 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94739704278BBCE30059F015 /* Quiz.swift */; };
+		94CF151427B9948D008008DC /* HintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF151327B9948D008008DC /* HintViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		947396FE278BB2530059F015 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94739702278BB8F70059F015 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		94739704278BBCE30059F015 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		94CF151327B9948D008008DC /* HintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				947396FE278BB2530059F015 /* HomeViewController.swift */,
 				94739702278BB8F70059F015 /* Question.swift */,
 				94739704278BBCE30059F015 /* Quiz.swift */,
+				94CF151327B9948D008008DC /* HintViewController.swift */,
 			);
 			path = AI_Recycle_Helper;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				94739705278BBCE30059F015 /* Quiz.swift in Sources */,
 				947396FD278BB1880059F015 /* QuizViewController.swift in Sources */,
 				940F1B592765695F002802D7 /* AiDetectViewController.swift in Sources */,
+				94CF151427B9948D008008DC /* HintViewController.swift in Sources */,
 				940F1B552765695F002802D7 /* AppDelegate.swift in Sources */,
 				940F1B572765695F002802D7 /* SceneDelegate.swift in Sources */,
 				94739703278BB8F70059F015 /* Question.swift in Sources */,

@@ -13,12 +13,14 @@ struct Question {
     let options:[String];
     let answers:[Int];
     let hasImage:Bool;
+    let hint:String;
      // Add image and reason
-    init(questionText:String,options:[String],answers:[Int],hasImage:Bool){
+    init(questionText:String,options:[String],answers:[Int],hasImage:Bool,hint:String){
         self.options=options
         self.answers=answers
         self.questionText=questionText
         self.hasImage=hasImage
+        self.hint=hint
     }
     
 }

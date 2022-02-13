@@ -25,6 +25,9 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var b5: UIButton!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    
   /*
     
     init(){
@@ -53,17 +56,33 @@ class QuizViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func hintButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToHint", sender: self)
+        
+    }
     @IBAction func answerButtonIsPressed(_ sender: UIButton) {
+        
         let questions = quiz.questions;
         questionText.text=questions[(count%(questions.count))].questionText
         count+=1
         quiz.currentQustionNum=count
+        
+        var x = quiz.checkAns(userAnswer:userSelectList);
+
         updateUI();
-        
-        
+
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "goToHint" {
+                let destinationVC = segue.destination as! HintViewController
+             destinationVC.hint = quiz.getHint()
+            
+            }
+    }
     func updateUI(){
+        
+        
         userSelectList = [];
         quiz.getQuestion();
         questionText.text = quiz.getQuestionText();
@@ -86,6 +105,10 @@ class QuizViewController: UIViewController {
             buttonList[5-questionsOption.count+index]?.isEnabled=true;
             buttonList[5-questionsOption.count+index]?.alpha=1
         }
+        
+        
+        
+        
     }
     
     
