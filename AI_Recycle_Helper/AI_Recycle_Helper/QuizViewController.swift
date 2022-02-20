@@ -62,13 +62,13 @@ class QuizViewController: UIViewController {
     }
     @IBAction func answerButtonIsPressed(_ sender: UIButton) {
         
-        let questions = quiz.questions;
-        questionText.text=questions[(count%(questions.count))].questionText
-        count+=1
-        quiz.currentQustionNum=count
+       // let questions = quiz.questions;
+        //questionText.text=questions[(count%(questions.count))].questionText
+        //
+        //count+=1
+        //quiz.currentQustionNum=count
         
         var x = quiz.checkAns(userAnswer:userSelectList);
-
         updateUI();
 
     }
@@ -81,7 +81,10 @@ class QuizViewController: UIViewController {
             }
     }
     func updateUI(){
+       
+        scoreLabel.text = String(quiz.getScore())
         
+        //print(quiz.getScore())
         
         userSelectList = [];
         quiz.getQuestion();
@@ -106,9 +109,6 @@ class QuizViewController: UIViewController {
             buttonList[5-questionsOption.count+index]?.alpha=1
         }
         
-        
-        
-        
     }
     
     
@@ -125,7 +125,7 @@ class QuizViewController: UIViewController {
             }
 
         }
-        print(userSelectList)
+        //print(userSelectList)
         
     }
     /*

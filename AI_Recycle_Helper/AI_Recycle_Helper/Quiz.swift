@@ -13,10 +13,10 @@ struct Quiz{
     var score = 0
     var usedQuestion:[Int]=[];
     let questions = [
-        Question(questionText:"Styrofoam should be placed in your recycling bin/cart." , options: ["True","False"], answers: [1], hasImage: true, hint: "1"),
-        Question(questionText: "Batteries and small electronics go in your recycling bin/cart.", options: ["True","False"], answers: [1], hasImage: true,hint: "2"),
-        Question(questionText: "Recyclables should be loose and not bagged.", options: ["True","False"], answers: [0], hasImage: true,hint: "3"),
-        Question(questionText: "Old garden hoses and electric cords belong in your recycling bin/cart.", options: ["Yes","No"], answers: [0], hasImage: false,hint: "4"),
+        Question(questionText:"Styrofoam should be placed in your recycling bin/cart." , options: ["True","False"], answers: [1], hasImage: true, hint: "Styrofoam packaging and film plastics aren't accepted for collection. You can drop them at the Eco-Centre or take them to a Recycle BC drop-off location."),
+        Question(questionText: "Batteries and small electronics go in your recycling bin/cart.", options: ["True","False"], answers: [1], hasImage: true,hint: "Most importantly, you want to keep electronics and rechargeable batteries out of your recycling and trash bin. This will help to prevent the serious threat of fires caused by sparks or explosions."),
+        Question(questionText: "Recyclables should be loose and not bagged.", options: ["True","False"], answers: [0], hasImage: true,hint: "Loose materials help machine and recycling staff see items in the bin right away to pull out any non-recyclables as soon as possible."),
+        Question(questionText: "Old garden hoses and electric cords belong in your recycling bin/cart.", options: ["Yes","No"], answers: [1], hasImage: false,hint: "garden hoses are tanglers, which can cause massive disruption."),
         Question(questionText: "All metal is recyclable - just put it in your recycling bin/cart at home. ", options: ["True", "False"], answers: [1], hasImage: false,hint: "5"),
         Question(questionText: "Which of the following plastic bottles are recyclable?", options: ["Only shampoo bottle",    "Only laundry detergent",    "Only dish soap",    "Only window cleaner", "All of above"], answers: [4], hasImage: false,hint: "1"),
         Question(questionText: "You should not…", options: ["Place recycling in plastic bags and then putting them in the recycling bin.","Put recyclable items in the general rubbish bin.","Separate food scraps from pizza boxes before recycling."], answers: [0,1,2], hasImage: false,hint: "1"),
@@ -43,26 +43,49 @@ struct Quiz{
         var flag = true;
         for correctAns in questions[currentQustionNum].answers{
             if (userAnswer.contains(questions[currentQustionNum].options[correctAns])){
+                print(questions[currentQustionNum].options[correctAns])
                 self.score += (10/(questions[currentQustionNum].answers.count));
             }else{
                 flag = false
             }
+            
         }
-        
         return flag
     }
+    
+    /*
+     var flag=true;
+     for ua in userAnswer{
+         print("User select:"+ua);
+         for ansInd in questions[currentQustionNum].answers {
+            print("the answrs is"+questions[currentQustionNum].options[ansInd])
+            if (ua == questions[currentQustionNum].options[ansInd]){
+                 self.score+=25
+             }
+         }
+     }
+     return flag
+     
+     */
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func getQuestionText() ->String{
         return questions[currentQustionNum].questionText
     }
     
-    func getAnswers() ->[Int]{
-        return questions[currentQustionNum].answers
-    }
-    
-    func getOptions() -> [String]{
-        return questions[currentQustionNum].options
-    }
-    
+
+
     
     mutating func getQuestion(){
         var nextQuestionNum = Int.random(in: 0..<questions.count)
