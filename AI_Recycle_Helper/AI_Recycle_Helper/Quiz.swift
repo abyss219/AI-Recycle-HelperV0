@@ -68,18 +68,6 @@ struct Quiz{
      
      */
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func getQuestionText() ->String{
         return questions[currentQustionNum].questionText
     }
