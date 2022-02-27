@@ -60,17 +60,33 @@ class QuizViewController: UIViewController {
         performSegue(withIdentifier: "goToHint", sender: self)
         
     }
+    
+    
+    var goToNext = false;
     @IBAction func answerButtonIsPressed(_ sender: UIButton) {
-        
-       // let questions = quiz.questions;
-        //questionText.text=questions[(count%(questions.count))].questionText
-        //
-        //count+=1
-        //quiz.currentQustionNum=count
-        
-        var x = quiz.checkAns(userAnswer:userSelectList);
-        updateUI();
-
+        let buttonList=[self.b1,self.b2,self.b3,self.b4,self.b5];
+        if (goToNext){
+            updateUI();
+            goToNext = false
+        }else{
+            var x = quiz.checkAns(userAnswer:userSelectList);
+            var myquestion=quiz.questions[quiz.currentQustionNum]
+            for i in 0...(myquestion.options.count-1){
+                if myquestion.answers.contains(i) && userSelectList.contains(myquestion.options[i]){
+                    //green
+                    buttonList[5-myquestion.options.count+i]?.backgroundColor=UIColor(red: 227/255, green: 253/255, blue: 253/255, alpha: 1.0)
+                    
+                }else if (!myquestion.answers.contains(i) && !userSelectList.contains(myquestion.options[i])){
+                    buttonList[5-myquestion.options.count+i]?.backgroundColor=UIColor.clear
+                }else{
+                    buttonList[5-myquestion.options.count+i]?.backgroundColor=UIColor(red: 255/255, green: 226/255, blue: 226/255, alpha: 1.0)
+                }
+   
+            }
+            
+            
+            goToNext = true;
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -114,19 +130,19 @@ class QuizViewController: UIViewController {
     
     //Anamation
     @IBAction func userSelect(_ sender: UIButton) {
-        
-        if userSelectList.contains(sender.currentTitle!){
-            userSelectList=userSelectList.filter(){$0 != sender.currentTitle!}
-            sender.backgroundColor=UIColor.clear
-        }else{
-            if(userSelectList.count < quiz.questions[quiz.currentQustionNum].answers.count){
-                userSelectList.append(sender.currentTitle!)
-                sender.backgroundColor=UIColor.green
-            }
+        if (!goToNext){
+            if userSelectList.contains(sender.currentTitle!){
+                userSelectList=userSelectList.filter(){$0 != sender.currentTitle!}
+                sender.backgroundColor=UIColor.clear
+            }else{
+                if(userSelectList.count < quiz.questions[quiz.currentQustionNum].answers.count){
+                    userSelectList.append(sender.currentTitle!)
+                    sender.backgroundColor=UIColor(red: 134/255, green: 198/255, blue: 244/255, alpha: 1.0)
+                }
 
+            }
+            //print(userSelectList)
         }
-        //print(userSelectList)
-        
     }
     /*
     // MARK: - Navigation
