@@ -27,6 +27,8 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var hintButton: UIButton!
+    
     
   /*
     
@@ -70,6 +72,12 @@ class QuizViewController: UIViewController {
             goToNext = false
         }else{
             var x = quiz.checkAns(userAnswer:userSelectList);
+            
+            if (!x){
+                hintButton.alpha=1
+                hintButton.isEnabled=true
+            }
+
             var myquestion=quiz.questions[quiz.currentQustionNum]
             for i in 0...(myquestion.options.count-1){
                 if myquestion.answers.contains(i) && userSelectList.contains(myquestion.options[i]){
@@ -97,7 +105,8 @@ class QuizViewController: UIViewController {
             }
     }
     func updateUI(){
-       
+        hintButton.alpha=0
+        hintButton.isEnabled=false
         scoreLabel.text = String(quiz.getScore())
         
         //print(quiz.getScore())

@@ -250,19 +250,23 @@
                                             <constraint firstAttribute="trailing" secondItem="Fm9-DO-pg5" secondAttribute="trailing" id="rj4-hI-Urm"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="NcU-AD-ucl" userLabel="PreNextStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="NcU-AD-ucl" userLabel="PreNextStackView">
                                         <rect key="frame" x="0.0" y="685" width="414" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHa-jk-uH4">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="UHa-jk-uH4">
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="9b5-EZ-NpS"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="r0g-d6-Jn2"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Hint"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Show Answer" titleAlignment="center"/>
                                                 <connections>
                                                     <action selector="hintButtonPressed:" destination="ObK-nt-4FB" eventType="touchUpInside" id="PVL-M9-15f"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISY-YW-37Y" userLabel="Next Question">
-                                                <rect key="frame" x="357" y="0.0" width="57" height="50"/>
+                                                <rect key="frame" x="307" y="0.0" width="107" height="50"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
                                                 <connections>
@@ -308,6 +312,7 @@
                         <outlet property="b3" destination="dup-9W-YKu" id="rVu-G2-5EQ"/>
                         <outlet property="b4" destination="QaX-O1-7ao" id="Cbw-YB-Lrn"/>
                         <outlet property="b5" destination="wTE-pp-aBc" id="buT-cV-P8D"/>
+                        <outlet property="hintButton" destination="UHa-jk-uH4" id="Vnv-XU-1Y1"/>
                         <outlet property="questionImage" destination="3Qs-VH-xUF" id="aHY-oO-1L9"/>
                         <outlet property="questionText" destination="MdN-H3-Dj4" id="OCz-VK-Hok"/>
                         <outlet property="scoreLabel" destination="9yv-oA-FvN" id="evd-Xl-rdf"/>
