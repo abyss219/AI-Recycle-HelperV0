@@ -32,9 +32,7 @@ struct Quiz{
     ]
 
     
-    func getTotalQuestionNumber() -> Int{
-        return questions.count;
-    }
+
     func getScore() -> Int{
         return score;
     }
@@ -53,20 +51,7 @@ struct Quiz{
         return flag
     }
     
-    /*
-     var flag=true;
-     for ua in userAnswer{
-         print("User select:"+ua);
-         for ansInd in questions[currentQustionNum].answers {
-            print("the answrs is"+questions[currentQustionNum].options[ansInd])
-            if (ua == questions[currentQustionNum].options[ansInd]){
-                 self.score+=25
-             }
-         }
-     }
-     return flag
-     
-     */
+
     
     func getQuestionText() ->String{
         return questions[currentQustionNum].questionText
@@ -84,9 +69,7 @@ struct Quiz{
         self.usedQuestion.append(nextQuestionNum)
     }
     
-    func numberOfAnsweredQuestion()-> Int{
-        return usedQuestion.count
-    }
+
     
     func getHint() -> String{
         return questions[currentQustionNum].hint

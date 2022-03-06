@@ -45,9 +45,6 @@ class QuizViewController: UIViewController {
     
     
     
-    
-    var count=0
-   
     var userSelectList:[String] = []
     
     //var questions=["1+2=5","2+6=7","3+1=4"]
@@ -67,6 +64,12 @@ class QuizViewController: UIViewController {
     
     var goToNext = false;
     @IBAction func answerButtonIsPressed(_ sender: UIButton) {
+        
+
+        
+        
+        
+        
         let buttonList=[self.b1,self.b2,self.b3,self.b4,self.b5];
         if (goToNext){
             updateUI();
@@ -98,19 +101,32 @@ class QuizViewController: UIViewController {
         }
     }
     
+    
+
+    
+ 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "goToHint" {
                 let destinationVC = segue.destination as! HintViewController
              destinationVC.hint = quiz.getHint()
             
+            }else if segue.identifier == "goToFinishView"{
+                let destinationVC = segue.destination as! FinishQuizViewController
+                destinationVC.score = quiz.score
             }
     }
     func updateUI(){
+        checkFinishView();
+        
+        
         hintButton.alpha=0
         hintButton.isEnabled=false
         scoreLabel.text = String(quiz.getScore())
         
-        progressBar.progress=Float(count)/10.0;
+        progressBar.progress=Float(quiz.usedQuestion.count)/10.0;
+        print(progressBar.progress)
+       
 
         //print(quiz.getScore())
         userSelectList = [];
@@ -138,6 +154,14 @@ class QuizViewController: UIViewController {
         
     }
     
+    
+    func checkFinishView(){
+        if (quiz.usedQuestion.count==10){
+            performSegue(withIdentifier: "goToFinishView", sender: self)
+            //quiz.score = 0
+            //quiz.usedQuestion=[];
+        }
+    }
     
     //Anamation
     @IBAction func userSelect(_ sender: UIButton) {

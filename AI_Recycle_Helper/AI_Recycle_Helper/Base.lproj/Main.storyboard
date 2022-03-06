@@ -282,8 +282,7 @@
                                         </constraints>
                                     </stackView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tv3-Re-aXi">
-                                        <rect key="frame" x="24.5" y="765" width="365" height="4"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <rect key="frame" x="0.0" y="765" width="414" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="wxZ-7r-2i7"/>
                                         </constraints>
@@ -294,8 +293,10 @@
                                     <constraint firstItem="FpZ-Ci-gZK" firstAttribute="leading" secondItem="9SH-2M-DWy" secondAttribute="leading" id="3wW-Bh-8Bz"/>
                                     <constraint firstAttribute="trailing" secondItem="NcU-AD-ucl" secondAttribute="trailing" id="C08-3n-304"/>
                                     <constraint firstItem="tv3-Re-aXi" firstAttribute="centerX" secondItem="9SH-2M-DWy" secondAttribute="centerX" id="i25-S4-cMj"/>
+                                    <constraint firstAttribute="trailing" secondItem="tv3-Re-aXi" secondAttribute="trailing" id="nvV-ER-BeD"/>
                                     <constraint firstItem="NcU-AD-ucl" firstAttribute="leading" secondItem="9SH-2M-DWy" secondAttribute="leading" id="w1t-sd-sFF"/>
                                     <constraint firstAttribute="trailing" secondItem="FpZ-Ci-gZK" secondAttribute="trailing" id="ySq-it-igw"/>
+                                    <constraint firstItem="tv3-Re-aXi" firstAttribute="leading" secondItem="9SH-2M-DWy" secondAttribute="leading" id="yrg-MT-Ykk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -321,11 +322,49 @@
                         <outlet property="questionText" destination="MdN-H3-Dj4" id="OCz-VK-Hok"/>
                         <outlet property="scoreLabel" destination="9yv-oA-FvN" id="evd-Xl-rdf"/>
                         <segue destination="60h-pp-vJM" kind="presentation" identifier="goToHint" id="s5Z-js-YlF"/>
+                        <segue destination="VUD-fb-Zcz" kind="presentation" identifier="goToFinishView" modalPresentationStyle="fullScreen" id="Id1-uc-pvW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zE-O7-M8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19" y="923"/>
+        </scene>
+        <!--finishQuizScene-->
+        <scene sceneID="Xy5-TM-IxA">
+            <objects>
+                <viewController title="finishQuizScene" id="VUD-fb-Zcz" customClass="FinishQuizViewController" customModule="AI_Recycle_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh3-kg-8pM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuU-7k-gzv" userLabel="Score">
+                                <rect key="frame" x="186" y="216" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-GL-9XY" userLabel="Restart">
+                                <rect key="frame" x="174" y="433" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="restartButtonPressed:" destination="VUD-fb-Zcz" eventType="touchUpInside" id="3nN-q6-jPN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o3w-6r-7jD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0B1-Y9-10c"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="CuU-7k-gzv" id="8N8-Fe-ep1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TuQ-yf-wA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804" y="2026"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8F2-ua-c3C">
