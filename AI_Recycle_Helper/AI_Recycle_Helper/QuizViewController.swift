@@ -125,7 +125,6 @@ class QuizViewController: UIViewController {
         scoreLabel.text = String(quiz.getScore())
         
         progressBar.progress=Float(quiz.usedQuestion.count)/10.0;
-        print(progressBar.progress)
        
 
         //print(quiz.getScore())
@@ -158,8 +157,8 @@ class QuizViewController: UIViewController {
     func checkFinishView(){
         if (quiz.usedQuestion.count==10){
             performSegue(withIdentifier: "goToFinishView", sender: self)
-            //quiz.score = 0
-            //quiz.usedQuestion=[];
+            quiz.score = 0
+            quiz.usedQuestion=[];
         }
     }
     

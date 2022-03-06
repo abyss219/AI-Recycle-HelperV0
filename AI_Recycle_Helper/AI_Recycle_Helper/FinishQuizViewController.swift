@@ -8,10 +8,12 @@
 import UIKit
 
 class FinishQuizViewController: UIViewController {
-    var score=0;
+    //var score=0;
+    var score:Int?;
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = String(format:"%.0f",score);
+        scoreLabel.text = String(score!)
+        //scoreLabel.text = String(format:"%.0f",score);
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var scoreLabel: UILabel!
