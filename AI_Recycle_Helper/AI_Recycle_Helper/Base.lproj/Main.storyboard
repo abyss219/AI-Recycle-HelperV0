@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -280,11 +281,13 @@
                                             <constraint firstAttribute="height" constant="50" id="oen-dv-K9T"/>
                                         </constraints>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tv3-Re-aXi">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tv3-Re-aXi">
                                         <rect key="frame" x="24.5" y="765" width="365" height="4"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="wxZ-7r-2i7"/>
                                         </constraints>
+                                        <color key="progressTintColor" name="AccentColor"/>
                                     </progressView>
                                 </subviews>
                                 <constraints>
@@ -313,6 +316,7 @@
                         <outlet property="b4" destination="QaX-O1-7ao" id="Cbw-YB-Lrn"/>
                         <outlet property="b5" destination="wTE-pp-aBc" id="buT-cV-P8D"/>
                         <outlet property="hintButton" destination="UHa-jk-uH4" id="Vnv-XU-1Y1"/>
+                        <outlet property="progressBar" destination="tv3-Re-aXi" id="1tw-vc-ipW"/>
                         <outlet property="questionImage" destination="3Qs-VH-xUF" id="aHY-oO-1L9"/>
                         <outlet property="questionText" destination="MdN-H3-Dj4" id="OCz-VK-Hok"/>
                         <outlet property="scoreLabel" destination="9yv-oA-FvN" id="evd-Xl-rdf"/>
@@ -410,6 +414,9 @@
         <image name="camera.shutter.button" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

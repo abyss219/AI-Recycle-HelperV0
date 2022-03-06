@@ -29,6 +29,7 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var hintButton: UIButton!
     
+    @IBOutlet weak var progressBar: UIProgressView!
     
   /*
     
@@ -109,8 +110,9 @@ class QuizViewController: UIViewController {
         hintButton.isEnabled=false
         scoreLabel.text = String(quiz.getScore())
         
+        progressBar.progress=Float(count)/10.0;
+
         //print(quiz.getScore())
-        
         userSelectList = [];
         quiz.getQuestion();
         questionText.text = quiz.getQuestionText();
