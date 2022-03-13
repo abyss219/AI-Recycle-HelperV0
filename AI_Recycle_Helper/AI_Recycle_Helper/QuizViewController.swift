@@ -31,6 +31,8 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var questionNumberLabel: UILabel!
+    
   /*
     
     init(){
@@ -122,10 +124,11 @@ class QuizViewController: UIViewController {
         
         hintButton.alpha=0
         hintButton.isEnabled=false
-        scoreLabel.text = String(quiz.getScore())
+        scoreLabel.text = ("score: "+String(quiz.getScore()))
         
         progressBar.progress=Float(quiz.usedQuestion.count)/10.0;
        
+        questionNumberLabel.text=("Question "+String(quiz.usedQuestion.count+1))
 
         //print(quiz.getScore())
         userSelectList = [];
